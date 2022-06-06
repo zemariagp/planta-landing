@@ -10,6 +10,10 @@
   max-width: 1000px;
 }
 
+.section {
+  padding-bottom: 3rem;
+}
+
 .center {
   font-family: sans-serif;
   line-height: 1.5rem;
@@ -150,7 +154,7 @@ form {
 
 #Layer_1 {
   margin-top: 1rem;
-  max-height: 40vh;
+  max-height: 35vh;
 }
 
 .before-title {
