@@ -75,7 +75,7 @@
       <div class="section video-backdrop">
         <div class="center">
           <iframe
-            class="video"
+            class="video hidden"
             src="https://www.youtube.com/embed/ZC-FYG6ZH2A"
             title="YouTube video player"
             frameborder="0"
@@ -138,5 +138,11 @@
         element.classList.add("show");
       }
     );
+    const launchTime = new Date(2022, 5, 22, 19, 0, 0, 0);
+    const now = new Date();
+    if (now > launchTime) {
+      const element = document.querySelector(".video");
+      element.classList.remove("hidden");
+    }
   </script>
 </html>
