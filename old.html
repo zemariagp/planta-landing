@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title id="main-title">Convite - Planta</title>
+    <title>Planta</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
@@ -11,17 +11,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" type="text/css" href="shared.css" />
-    <link rel="stylesheet" type="text/css" href="convite.css" />
-    <meta name="description" content="Convite ANTE-ESTREIA de PLANTA" />
-    <meta property="og:title" content="Convite" />
-    <meta property="og:url" content="Convite ANTE-ESTREIA de Planta" />
-    <meta property="og:description" content="Convite ANTE-ESTREIA de PLANTA" />
-    <meta
-      property="og:image"
-      content="http://www.planta-filme.com/public/preview2.png"
-    />
-    <meta property="og:type" content="article" />
-    <meta property="og:locale" content="pt_PT" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico" />
     <!-- ****** faviconit.com favicons ****** -->
   </head>
   <body>
@@ -35,8 +27,7 @@
         ></object>
         <div class="lower">
           <h2 class="title portrait">Planta</h2>
-          <h3 class="invite">um filme de Miguel Pité</h3>
-
+          <h3 class="subtitle">um filme de Miguel Pité</h3>
           <p class="credits">
             <important>RnC Records</important> apresenta um filme de
             <important>Miguel Pité</important> realizado por
@@ -49,7 +40,6 @@
             <img src="/img/rtp.png" alt="" />
             <img src="/img/spa.png" alt="" />
           </div>
-          <p class="credits">(faz scroll)</p>
         </div>
       </div>
       <div class="section">
@@ -59,24 +49,22 @@
           type="image/svg+xml"
         ></object>
 
-        <div class="center tip">Se puderes, usa um ecrã grande</div>
+        <div class="center tip">usa um ecrã grande</div>
       </div>
       <div class="section">
-        <div class="section">
-          <object
-            class="separator"
-            data="./img/blocos/Asset 34.svg"
-            type="image/svg+xml"
-          ></object>
+        <object
+          class="separator"
+          data="./img/blocos/Asset 34.svg"
+          type="image/svg+xml"
+        ></object>
 
-          <div class="center tip">e colunas ou headphones.</div>
-        </div>
+        <div class="center tip">e colunas ou headphones</div>
       </div>
       <div class="section video-backdrop">
         <div class="center">
           <iframe
             class="video"
-            src="https://www.youtube.com/embed/ZC-FYG6ZH2A"
+            src="https://www.youtube.com/embed/N1w-hDiJ4dM"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media;
@@ -88,37 +76,35 @@
       <div class="section">
         <object
           class="separator"
-          data="./img/blocos/Asset 18.svg"
+          data="./img/blocos/Asset 11.svg"
           type="image/svg+xml"
         ></object>
 
-        <h2 class="title portrait">Obrigado</h2>
         <div class="center">
-          pelo teu tempo. Se gostaste espalha a palavra<br />
-          e fica em contacto connosco. <br />
+          Muito obrigado pelo teu tempo. Se gostaste espalha a palavra...
+        </div>
+        <button class="share">Share</button>
+        <div class="subscribe">
+          <div class="center">...e subscreve a newsletter.</div>
 
-          <div class="subscribe">
-            <form name="contact" action="/success.html" method="POST" netlify>
-              <div class="form-inner">
-                <label for="name">Nome</label>
-                <input type="text" name="name" required />
-
-                <label for="email">Email</label>
-                <input type="email" name="email" required />
-
-                <button class="button-10" type="submit">Enviar</button>
-              </div>
-            </form>
-            <footer>
-              <small>
-                Obra protegida por direitos de autor. <br />
-                <a href="mailto:zemaria@gmail.com" target="_blank">
-                  Entrar em contacto.
-                </a>
-                <br />
-              </small>
-            </footer>
-          </div>
+          <form name="contact" netlify>
+            <div class="form-inner">
+              <label for="name">Nome <input type="text" name="name" /></label>
+              <label for="email"
+                >Email <input type="email" name="email"
+              /></label>
+              <button type="submit">Enviar</button>
+            </div>
+          </form>
+          <footer>
+            <small>
+              Obra protegida por direitos de autor. <br />
+              <a href="mailto:zemaria@gmail.com" target="_blank">
+                Entrar em contacto.
+              </a>
+              <br />
+            </small>
+          </footer>
         </div>
       </div>
     </div>
@@ -130,13 +116,22 @@
     referrerpolicy="no-referrer"
   ></script>
   <script>
+    function fade(element) {
+      var op = 1; // initial opacity
+      var timer = setInterval(function () {
+        if (op <= 0.1) {
+          clearInterval(timer);
+          element.style.display = "none";
+        }
+        element.style.opacity = op;
+        element.style.filter = "alpha(opacity=" + op * 100 + ")";
+        op -= op * 0.1;
+      }, 50);
+    }
     new Vivus(
       "Layer_1",
-      { duration: 150, type: "delayed", reverseStack: true },
-      () => {
-        const element = document.querySelector(".lower");
-        element.classList.add("show");
-      }
+      { duration: 100, type: "delayed", reverseStack: true },
+      () => {}
     );
   </script>
 </html>
